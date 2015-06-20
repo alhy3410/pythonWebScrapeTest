@@ -6,7 +6,7 @@ response = requests.get(url)
 html = response.content
 
 soup = BeautifulSoup(html)
-print soup.prettify()
+print(soup.prettify().encode('cp850',errors='ignore'))
 
 # import requests
 #
