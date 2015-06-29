@@ -50,15 +50,14 @@ tweetIt = timestamp + result + url
 
 ##scheduler
 def tweetItOut():
-    print tweetIt
-    # status = api.PostUpdate(tweetIt)
-    # print status.text
+    status = api.PostUpdate(tweetIt)
+    print status.text
 
 def scheduler_tweetItOut():
     scheduler.enter(0, 1, tweetItOut, ())
     scheduler.run()
-    time.sleep(21600)
+    time.sleep(14400)
 
 # print 4 times a day for a year
-for i in range(1460):
+for i in range(100):
     scheduler_tweetItOut()
